@@ -1,0 +1,17 @@
+
+  
+
+<!-- Nav Bar above -->
+
+<form [formGroup]="userForm" (submit)="onSubmit()">
+  <label for="username">username</label>
+  <input formControlName="username" id="username" />
+
+  <label for="password">Password</label>
+  <input formControlName="password" id="password" />
+
+
+  <button type="submit" >Submit</button>
+</form>
+<p>{{result}}</p>
+<a class="nav-link" routerLink="/register">No account yet ? Register</a>

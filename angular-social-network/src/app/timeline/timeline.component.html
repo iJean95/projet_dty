@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Social Network</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Timeline<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/invite">Friends</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posting">Post</a>
+      </li>
+    </ul>
+    <div><img class="img-responsive2"  src={{profilepic}} height="35"> <strong>  {{user}}  </strong><button (click)="submit()" type="button" class="btn btn-danger">Logout</button></div>
+  </div>
+</nav>
+
+
+
+<div>
+  <p></p>
+</div>
+
+<div class="row">
+  <div class="col-sm-6" *ngFor="let post of posts" >
+    <div class="card">
+      <div class="card-body">
+        <a class="nav-link" href="{{'/profile/' + post.posterID}}">
+          <h1> <img height="42" width="42" class="img-thumbnail" src="{{'http://localhost:4000/download/'+post.posterID}}"
+              alt="Card image cap">
+            {{post.username}}</h1>
+        </a>
+  
+        <p class="card-text"><strong>{{post.content}}</strong> on {{post.createdDate}}</p>
+      </div>
+      
+    </div>
+  </div>
+  <div>
+    <p></p>
+  </div>
+  
+</div>
+
+<!-- <div class="row">
+  <div class="column" *ngFor="let post of posts">
+    <mat-card class="example-card">
+
+      <mat-card-header>
+          
+        <div mat-card-avatar class="example-header-image">     <img class="img-responsive2"       
+          src="{{'http://localhost:4000/download/'+post.posterID}}" height = "50">  
+        </div>
+        <mat-card-title>{{post.username}}</mat-card-title>
+        <mat-card-subtitle>on {{post.createdDate}}</mat-card-subtitle>
+
+      </mat-card-header>
+
+      <mat-card-content>{{post.content}}</mat-card-content>
+
+    </mat-card>
+  </div>
+</div> -->
+
+<!-- <img src="../assets/user.png" height="50" width="50">  -->

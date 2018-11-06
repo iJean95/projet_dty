@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Social Network</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Timeline</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/invite">Friends</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/posting">Post<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <div><img class="img-responsive2" src={{profilepic}} height="42" >      {{user}}</div>
+  </div>
+</nav>
+
+
+<h2>Posting</h2>
+
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="content">Write something to timeline:</label>
+    <input type="text" formControlName="content" class="form-control" [(ngModel)]="content" />
+  </div>
+  <div>
+    <div>
+      <input type="file" (change)="createFormData($event)">
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Post</button>
+  </div>
+</form>

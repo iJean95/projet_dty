@@ -1,0 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Social Network</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Timeline</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/invite">Friends<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posting">Post</a>
+      </li>
+    </ul>
+    <div><img class="img-responsive2" src={{profilepic}} height="42" >      {{user}}</div>
+  </div>
+</nav>
+
+  
+  
+
+<!-- Nav Bar above -->
+
+<div class="row">
+    <div class="column" *ngFor="let user of users">
+      <mat-card class="example-card">
+  
+        <mat-card-header>
+            
+          <div mat-card-avatar class="example-header-image">     <img class="img-responsive2"       
+            src="{{'http://localhost:4000/download/'+user.id}}" height = "50">  
+          </div>
+            <mat-card-title>{{user.username}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+  
+        </mat-card-header>
+  
+        <button (click)="onSendInviteClick(user.id)" type="button" class="btn btn-primary">Send invite</button>
+  
+      </mat-card>
+    </div>
+  </div>
+<!-- <h2>Invited friends :</h2> -->
+<div class="row">
+    <div class="column" *ngFor="let userI of usersInvited">
+      <mat-card class="example-card">
+  
+        <mat-card-header>
+            
+          <div mat-card-avatar class="example-header-image">     <img class="img-responsive2"       
+            src="{{'http://localhost:4000/download/'+user.id}}" height = "50">  
+          </div>
+          <mat-card-title>{{userI.username}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+  
+        </mat-card-header>
+  
+        <button (click)="onSendInviteClick(user.id)" type="button" class="btn btn-danger">invited</button>
+  
+      </mat-card>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="column" *ngFor="let invite of invites">
+      <mat-card class="example-card">
+  
+        <mat-card-header>
+            
+          <div mat-card-avatar class="example-header-image">     <img class="img-responsive2"       
+            src="{{'http://localhost:4000/download/'+user.id}}" height = "50">  
+          </div>
+          <mat-card-title>{{invite.inviterName}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+  
+        </mat-card-header>
+  
+        <button type="button" class="btn btn-warning" (click)="onInviteClick(invite)">Accept</button>
+  
+      </mat-card>
+    </div>
+  </div>
+
+
+<div class="row">
+    <div class="column" *ngFor="let friend of friends">
+      <mat-card class="example-card">
+  
+        <mat-card-header>
+            
+          <div mat-card-avatar class="example-header-image">     <img class="img-responsive2"       
+            src="{{'http://localhost:4000/download/'+friend.id}}" height = "50">  
+          </div>
+          <mat-card-title>{{friend}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+  
+        </mat-card-header>
+  
+  
+      </mat-card>
+    </div>
+  </div>
+
+  
